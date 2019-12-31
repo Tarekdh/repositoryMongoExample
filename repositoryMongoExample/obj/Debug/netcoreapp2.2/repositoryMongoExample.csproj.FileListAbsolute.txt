@@ -1,0 +1,14 @@
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\bin\Debug\netcoreapp2.2\repositoryMongoExample.deps.json
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\bin\Debug\netcoreapp2.2\repositoryMongoExample.runtimeconfig.json
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\bin\Debug\netcoreapp2.2\repositoryMongoExample.runtimeconfig.dev.json
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\bin\Debug\netcoreapp2.2\repositoryMongoExample.dll
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\obj\Debug\netcoreapp2.2\repositoryMongoExample.csprojAssemblyReference.cache
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\obj\Debug\netcoreapp2.2\repositoryMongoExample.csproj.CoreCompileInputs.cache
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\obj\Debug\netcoreapp2.2\repositoryMongoExample.RazorAssemblyInfo.cache
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\obj\Debug\netcoreapp2.2\repositoryMongoExample.RazorAssemblyInfo.cs
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\obj\Debug\netcoreapp2.2\repositoryMongoExample.AssemblyInfoInputs.cache
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\obj\Debug\netcoreapp2.2\repositoryMongoExample.AssemblyInfo.cs
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\obj\Debug\netcoreapp2.2\repositoryMongoExample.RazorTargetAssemblyInfo.cache
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\bin\Debug\netcoreapp2.2\repositoryMongoExample.pdb
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\obj\Debug\netcoreapp2.2\repositoryMongoExample.dll
+C:\Users\uid0896\source\repos\repositoryMongoExample\repositoryMongoExample\obj\Debug\netcoreapp2.2\repositoryMongoExample.pdb
