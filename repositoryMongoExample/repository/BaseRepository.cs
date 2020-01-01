@@ -20,12 +20,15 @@ namespace repositoryMongoExample.repository
         {
             _context = context;
         }
-        public async Task<bool> Add(TEntity entity)
+        public async Task<TEntity> Add(TEntity entity)
         {
             try
             {
-               await _collection.InsertOneAsync(entity);
-                return true;
+                entity.CreatedAt = DateTime.Today;
+                await _collection.InsertOneAsync(entity);
+                return await _collection
+                                 .Find(e => e.Id == entity.Id)
+                                 .FirstOrDefaultAsync();
             }
             catch (Exception ex)
             {
@@ -84,6 +87,7 @@ namespace repositoryMongoExample.repository
         public async Task<TEntity> Update(string id,TEntity entity)
         {
             entity.Id = new ObjectId(id);
+            entity.ModifiedAt = DateTime.Today;
             var filter = Builders<TEntity>.Filter.Eq(s => s.Id, new ObjectId(id));
             try
             {

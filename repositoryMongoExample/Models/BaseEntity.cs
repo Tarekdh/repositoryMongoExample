@@ -14,21 +14,28 @@ namespace repositoryMongoExample.Models
 
         [BsonId]
         public ObjectId Id { get; set; }
-        string InternalId { get; set; }
+        public string InternalId { get; set; }
 
         [BsonElement("CreatedBy")]
         [JsonProperty("CreatedBy")]
-        string CreatedBy { get; set; }
+        public string CreatedBy { get; set; }
 
         [BsonElement("ModifiedBy")]
         [JsonProperty("ModifiedBy")]
-        string ModifiedBy { get; set; }
+        public string ModifiedBy { get; set; }
 
-        [BsonDateTimeOptions(DateOnly = true)]
-        DateTime CreatedAt { get; set; } = new DateTime();
+        //[BsonDateTimeOptions(DateOnly = true)]
+        public DateTime? CreatedAt { get; set; } = null;
 
-        [BsonDateTimeOptions(DateOnly = true)]
-        DateTime ModifiedAt { get; set; } = new DateTime();
+        //[BsonDateTimeOptions(DateOnly = true)]
+        public DateTime? ModifiedAt { get; set; } = null;
+
+
+        public BaseEntity()
+        {
+            Id = ObjectId.GenerateNewId();
+        }
+
 
     }
 }

@@ -15,7 +15,7 @@ namespace repositoryMongoExample.services
         Task<List<TEntity>> GetAll();
         Task<TEntity> GetById(string id);
         Task<TEntity> Update(string id, TEntity entity);
-        Task<bool> Add(TEntity entity);
+        Task<TEntity> Add(TEntity entity);
         Task<bool> Delete(string id);
     }
 }

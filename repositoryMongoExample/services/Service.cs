@@ -19,7 +19,7 @@ namespace repositoryMongoExample.services
             _repository = repository;
         }
 
-        public async Task<bool> Add(TEntity entity)
+        public async Task<TEntity> Add(TEntity entity)
         {
             return await _repository.Add(entity);
         }

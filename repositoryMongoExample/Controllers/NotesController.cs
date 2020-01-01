@@ -10,6 +10,7 @@ using repositoryMongoExample.services;
 
 namespace repositoryMongoExample.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class NotesController : ControllerBase
@@ -49,7 +50,7 @@ namespace repositoryMongoExample.Controllers
 
         // GET api/values
         [HttpPost]
-        public async Task<bool> AddNote([FromBody] Note note)
+        public async Task<Note> AddNote([FromBody] Note note)
         {
            return await _noteService.Add(note);
         }
