@@ -25,5 +25,14 @@ namespace repositoryMongoExample.Data
                 return _database.GetCollection<Note>("Note");
             }
         }
+        public IMongoCollection<Employee> employee
+        {
+            get
+            {
+                return _database.GetCollection<Employee>("Employee");
+            }
+        }
     }
+
+    
 }
