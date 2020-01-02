@@ -19,34 +19,32 @@ namespace repositoryMongoExample.Controllers
     {
         private readonly TService _service;
 
-        public BaseController(TService service)
+        protected BaseController(TService service)
         {
             _service = service;
         }
 
-       
-
         // GET api/values
         [HttpGet]
-        public async Task<List<TEntity>> GetAll()
+        public virtual async Task<List<TEntity>> GetAll()
         {
             return await _service.GetAll();
         }
 
         [HttpGet("{id}")]
-        public async Task<TEntity> GetById(string id)
+        public virtual async Task<TEntity> GetById(string id)
         {
             return await _service.GetById(id);
         }
 
         [HttpPut("{id}")]
-        public async Task<TEntity> UpdateNote([FromBody] TEntity note, string id)
+        public virtual async Task<TEntity> UpdateNote([FromBody] TEntity note, string id)
         {
             return await _service.Update(id, note);
         }
 
         [HttpDelete("{id}")]
-        public async Task<bool> DeleteById(string id)
+        public virtual async Task<bool> DeleteById(string id)
         {
             return await _service.Delete(id);
         }
@@ -54,9 +52,9 @@ namespace repositoryMongoExample.Controllers
 
         // GET api/values
         [HttpPost]
-        public async Task<TEntity> AddNote([FromBody] TEntity note)
+        public async Task<TEntity> Add([FromBody] TEntity entity)
         {
-            return await _service.Add(note);
+            return await _service.Add(entity);
         }
     }
 }
