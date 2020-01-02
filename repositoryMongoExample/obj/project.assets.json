@@ -13954,11 +13954,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\uid0896\\Desktop\\.net with EF\\MongoDB\\repositoryMongoExample\\repositoryMongoExample\\repositoryMongoExample.csproj",
+      "projectUniqueName": "C:\\Users\\uid0896\\source\\repos\\repositoryMongoExample\\repositoryMongoExample\\repositoryMongoExample.csproj",
       "projectName": "repositoryMongoExample",
-      "projectPath": "C:\\Users\\uid0896\\Desktop\\.net with EF\\MongoDB\\repositoryMongoExample\\repositoryMongoExample\\repositoryMongoExample.csproj",
+      "projectPath": "C:\\Users\\uid0896\\source\\repos\\repositoryMongoExample\\repositoryMongoExample\\repositoryMongoExample.csproj",
       "packagesPath": "C:\\Users\\uid0896\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\uid0896\\Desktop\\.net with EF\\MongoDB\\repositoryMongoExample\\repositoryMongoExample\\obj\\",
+      "outputPath": "C:\\Users\\uid0896\\source\\repos\\repositoryMongoExample\\repositoryMongoExample\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
