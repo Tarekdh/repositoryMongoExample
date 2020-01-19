@@ -12,7 +12,7 @@ namespace repositoryMongoExample.services
         where TEntity : BaseEntity
     {
 
-        private readonly IRepository<TEntity> _repository;
+        public IRepository<TEntity> _repository;
         public Service(IRepository<TEntity> repository)
         {
             _repository = repository;

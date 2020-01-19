@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using repositoryMongoExample.JWT;
 using repositoryMongoExample.Models;
 using repositoryMongoExample.repository;
 using repositoryMongoExample.services;
@@ -24,13 +27,14 @@ namespace repositoryMongoExample.Controllers
             _service = service;
         }
 
-        // GET api/values
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
         public virtual async Task<List<TEntity>> GetAll()
         {
             return await _service.GetAll();
         }
 
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet("{id}")]
         public virtual async Task<TEntity> GetById(string id)
         {
@@ -50,7 +54,6 @@ namespace repositoryMongoExample.Controllers
         }
 
 
-        // GET api/values
         [HttpPost]
         public async Task<TEntity> Add([FromBody] TEntity entity)
         {
