@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using repositoryMongoExample.Data;
+using repositoryMongoExample.Extensions;
 using repositoryMongoExample.Models;
 using repositoryMongoExample.repository;
 using repositoryMongoExample.services;
@@ -26,27 +27,17 @@ namespace repositoryMongoExample
 
         public IConfiguration Configuration { get; }
 
-
-
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-           
+
             // configure the database
 
-            services.Configure<DbSettings>(Options =>
-            {
-                Options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
-                Options.Database = Configuration.GetSection("MongoConnection:Database").Value;
-            });
 
-            services.AddSingleton<MyDbContext>();
-            services.AddScoped<IRepository<Note>, NoteRepository>();
-            services.AddScoped<IService<IRepository<Note>, Note>, NoteService>();
-            services.AddScoped<IRepository<Employee>, EmployeeRepository>();
-            services.AddScoped<IService<IRepository<Employee>, Employee>, EmployeeService>();
+            services.ConfigureIdentity(Configuration);
+            services.ConfigureIOC(Configuration);
+            services.ConfigureDbSettings(Configuration);
+            services.ConfigureJwtSettings(Configuration);
 
             services.AddCors(options =>
             {
@@ -56,6 +47,9 @@ namespace repositoryMongoExample
                                     .AllowAnyHeader()
                                     .AllowCredentials());
             });
+
+            
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

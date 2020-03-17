@@ -18,13 +18,7 @@ namespace repositoryMongoExample.Data
             _database = client.GetDatabase(settings.Value.Database);
         }
 
-        public IMongoCollection<Note> Notes
-        {
-            get
-            {
-                return _database.GetCollection<Note>("Note");
-            }
-        }
+        
         public IMongoCollection<Employee> employee
         {
             get

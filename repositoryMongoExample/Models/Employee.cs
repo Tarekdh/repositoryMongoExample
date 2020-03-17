@@ -9,21 +9,13 @@ namespace repositoryMongoExample.Models
 {
     public class Employee : BaseEntity
     {
-        [JsonProperty("firstname")]
-        [BsonElement("firstname")]
+       
         string FirstName { get; set; }
 
-
-        [JsonProperty("lastname")]
-        [BsonElement("lastname")]
         string LastName { get; set; }
 
-        [JsonProperty("department")]
-        [BsonElement("department")]
         string Department { get; set; }
 
-        [JsonProperty("salary")]
-        [BsonElement("salary")]
         float Salary { get; set; }
 
     }

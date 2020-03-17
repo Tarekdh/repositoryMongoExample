@@ -16,12 +16,11 @@ namespace repositoryMongoExample.Models
         public ObjectId Id { get; set; }
         public string InternalId { get; set; }
 
-        [BsonElement("CreatedBy")]
-        [JsonProperty("CreatedBy")]
+       
         public string CreatedBy { get; set; }
 
-        [BsonElement("ModifiedBy")]
-        [JsonProperty("ModifiedBy")]
+        //[BsonElement("ModifiedBy")]
+        //[JsonProperty("ModifiedBy")]
         public string ModifiedBy { get; set; }
 
         //[BsonDateTimeOptions(DateOnly = true)]
