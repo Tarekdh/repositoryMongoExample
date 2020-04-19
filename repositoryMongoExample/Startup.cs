@@ -38,8 +38,19 @@ namespace repositoryMongoExample
 
             services.Configure<DbSettings>(Options =>
             {
-                Options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
-                Options.Database = Configuration.GetSection("MongoConnection:Database").Value;
+                var User = Configuration.GetSection("MongoDB:User").Value;
+                var Password = Configuration.GetSection("MongoDB:Password").Value;
+                var Host = Configuration.GetSection("MongoDB:Host").Value;
+                var Port = Configuration.GetSection("MongoDB:Port").Value;
+
+                var Database = Configuration.GetSection("MongoDB:Database").Value;
+
+                // var ConnString = $@"mongodb://{User}:{Password}@{Host}:{Port}";
+                var ConnString = $@"mongodb://{Host}:{Port}";
+
+                Options.ConnectionString = ConnString;
+                Options.Database = Database;
+                
             });
 
             services.AddSingleton<MyDbContext>();

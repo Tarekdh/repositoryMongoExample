@@ -1,0 +1,34 @@
+ 
+version: '3.5'
+
+# networks:
+#   localdev:
+#     name: localdev
+    
+services:
+  mongo:
+    restart: always
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/test
+    image: mongo:3.6
+    
+  main-api:
+    environment:
+      MongoDB__Host: mongo
+      MongoDB__Port: 27017
+    build: repositoryMongoExample/
+    restart: always
+    ports:
+      - "5000:80"
+    depends_on:
+      - mongo
+    # command: ./wait-for-it mongo:27017
+    # networks:
+    #   - localdev
+        
+  
