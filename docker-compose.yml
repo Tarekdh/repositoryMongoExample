@@ -21,14 +21,16 @@ services:
     environment:
       MongoDB__Host: mongo
       MongoDB__Port: 27017
-    build: .
+    #build: .
     restart: always
     ports:
       - "5000:80"
     depends_on:
       - mongo
     #command:  ["docker", "login"]
-    #image: titario/mongo-repository-example:1.0
+    image: titario/mongo-repository-example:1.0
+    #image: titario/backend-net-mongo:latest
+
     # command: ./wait-for-it mongo:27017
     # networks:
     #   - localdev
