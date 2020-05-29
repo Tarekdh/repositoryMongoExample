@@ -4,11 +4,11 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
 ARG BUILDCONFIG=RELEASE
 ARG VERSION="1.0.0"
 
-COPY repositoryMongoExample.csproj /build/
+COPY repositoryMongoExample/repositoryMongoExample.csproj /build/
 
 RUN dotnet restore ./build/repositoryMongoExample.csproj
 
-COPY . ./build/
+COPY ./repositoryMongoExample ./build/
 WORKDIR /build/
 RUN dotnet publish ./repositoryMongoExample.csproj -c $BUILDCONFIG -o out
 
