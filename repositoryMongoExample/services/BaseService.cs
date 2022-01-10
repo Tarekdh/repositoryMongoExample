@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace repositoryMongoExample.services
 {
-    public abstract class Service<TRepository, TEntity> : IService<TRepository, TEntity>
-        where TRepository : IRepository<TEntity>
+    public abstract class BaseService<TEntity> : IService<TEntity>
         where TEntity : BaseEntity
     {
 
         private readonly IRepository<TEntity> _repository;
-        public Service(IRepository<TEntity> repository)
+        public BaseService(IRepository<TEntity> repository)
         {
             _repository = repository;
         }

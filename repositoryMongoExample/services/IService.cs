@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace repositoryMongoExample.services
 {
-    public interface IService<TRepository,TEntity>
-        where TRepository : IRepository<TEntity>
+    public interface IService<TEntity>
         where TEntity : BaseEntity
 
     {

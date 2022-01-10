@@ -12,14 +12,12 @@ namespace repositoryMongoExample.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public abstract class BaseController<TService,TRepository,TEntity> : ControllerBase
-        where TService : class, IService<TRepository,TEntity>
-        where TRepository : IRepository<TEntity>
+    public abstract class BaseController<TEntity> : ControllerBase
         where TEntity : BaseEntity
     {
-        private readonly TService _service;
+        private readonly IService<TEntity> _service;
 
-        protected BaseController(TService service)
+        protected BaseController(IService<TEntity> service)
         {
             _service = service;
         }

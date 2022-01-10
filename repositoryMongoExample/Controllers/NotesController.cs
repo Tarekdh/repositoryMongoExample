@@ -13,14 +13,11 @@ namespace repositoryMongoExample.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class NotesController : BaseController<
-        IService<IRepository<Note>, Note>,
-        IRepository<Note>,
-        Note>
+    public class NotesController : BaseController<Note>
     {
-        private IService<IRepository<Note>, Note> _noteService;
+        private IService<Note> _noteService;
 
-        public NotesController(IService<IRepository<Note>, Note> service)
+        public NotesController(IService<Note> service)
             : base(service)
         {
             _noteService = service;

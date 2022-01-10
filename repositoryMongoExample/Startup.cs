@@ -55,9 +55,9 @@ namespace repositoryMongoExample
 
             services.AddSingleton<MyDbContext>();
             services.AddScoped<IRepository<Note>, NoteRepository>();
-            services.AddScoped<IService<IRepository<Note>, Note>, NoteService>();
+            services.AddScoped<IService<Note>, NoteService>();
             services.AddScoped<IRepository<Employee>, EmployeeRepository>();
-            services.AddScoped<IService<IRepository<Employee>, Employee>, EmployeeService>();
+            services.AddScoped<IService<Employee>, EmployeeService>();
 
             services.AddCors(options =>
             {

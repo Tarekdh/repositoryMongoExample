@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace repositoryMongoExample.services
 {
 
-    //public class NoteService : Service<NoteRepository, Note>, IService<IRepository<Note>, Note>
-    public class EmployeeService : Service<IRepository<Employee >, Employee>
+    public class EmployeeService : BaseService<Employee>
 
     {
 
